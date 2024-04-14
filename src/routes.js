@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Forgotpassword from "./pages/forgotpassword/Forgotpassword";
+import PageNotFound from "./pages/pagenotfound/PageNotFound";
 
 const MyRoutes = () => {
     return (
@@ -15,6 +16,8 @@ const MyRoutes = () => {
 
             {/* Backend */}
             {/* <Route path="/" element={<Dashboard />} /> */}
+
+            <Route path='*' element={<PageNotFound />} />
         </ Routes >
     )
 }
