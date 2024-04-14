@@ -5,7 +5,7 @@ const PageNotFound = () => {
     <>
       <div className="d-flex flex-column align-items-center justify-content-center vh-100 bg-warning">
         <DocumentTitle title={"Page not found | Smart stock"} />
-        <h1 className="card p-3">404 page not found</h1>
+        <h1 className="card p-3 bg-danger text-white">404 page not found</h1>
       </div>
     </>
   );
