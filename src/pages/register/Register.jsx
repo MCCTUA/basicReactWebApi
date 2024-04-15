@@ -1,10 +1,38 @@
+import React from "react";
 import AuthLayout from "../../components/layouts/auth/AuthLayout";
+// eslint-disable-next-line
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const Register = () => {
+  // การเรียกใช้งาน React Hook Form
+  // eslint-disable-next-line
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      fullname: "",
+      email: "",
+      username: "",
+      password: "",
+    },
+  });
+
+  // สร้าง function มารับข้อมูลจาก React hook form ไปใช้
+  const onSubmit = (data, event) => {
+    console.log("event", event);
+    console.log(data);
+  };
+
   return (
     <AuthLayout title="Register">
-      <form className="card p-4 col-md-4 my-form">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="card p-4 col-md-4 my-form"
+      >
         <h3 className="text-center mb-4">ลงทะเบียน</h3>
 
         <div className="mb-3 row">
@@ -17,7 +45,11 @@ const Register = () => {
               className="form-control"
               id="fullname"
               name="fullname"
+              {...register("fullname", { required: "กรุณาป้อนชื่อก่อน" })}
             />
+            {errors.fullname && (
+              <p className="error">{errors.fullname.message}</p>
+            )}
           </div>
         </div>
 
@@ -31,7 +63,9 @@ const Register = () => {
               className="form-control"
               id="email"
               name="email"
+              {...register("email", { required: "กรุณาป้อน Email" })}
             />
+            {errors.email && <p className="error">{errors.email.message}</p>}
           </div>
         </div>
 
@@ -45,7 +79,11 @@ const Register = () => {
               className="form-control"
               id="username"
               name="username"
+              {...register("username", { required: "กรุณาป้อน username" })}
             />
+            {errors.username && (
+              <p className="error">{errors.username.message}</p>
+            )}
           </div>
         </div>
 
@@ -59,7 +97,11 @@ const Register = () => {
               className="form-control"
               id="password"
               name="password"
+              {...register("password", { required: "กรุณาป้อน password" })}
             />
+            {errors.password && (
+              <p className="error">{errors.password.message}</p>
+            )}
           </div>
         </div>
 
@@ -75,11 +117,10 @@ const Register = () => {
             />
             &nbsp;&nbsp;
             <input
-              type="reset"
+              type="button"
               className="btn btn-danger"
-              name="Reset"
-              id="reset"
               value="ล้างข้อมูล"
+              onClick={() => reset()}
             />
           </div>
         </div>

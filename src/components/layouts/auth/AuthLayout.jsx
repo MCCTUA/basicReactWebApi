@@ -1,3 +1,4 @@
+import React from "react";
 import DocumentTitle from "react-document-title";
 
 const AuthLayout = ({ children, title = "Home" }) => {

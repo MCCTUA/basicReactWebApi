@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import AuthLayout from "../../components/layouts/auth/AuthLayout";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";

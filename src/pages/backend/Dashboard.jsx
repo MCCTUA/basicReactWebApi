@@ -1,3 +1,4 @@
+import React from "react";
 import BackendLayout from "../../components/layouts/backend/BackendLayout";
 
 const Dashboard = () => {

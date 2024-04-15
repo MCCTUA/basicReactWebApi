@@ -1,3 +1,6 @@
 {
-    "javascript.format.semicolons": "ignore"
+    "javascript.format.semicolons": "ignore",
+    "cSpell.enableFiletypes": [
+        "!javascriptreact"
+    ]
 }

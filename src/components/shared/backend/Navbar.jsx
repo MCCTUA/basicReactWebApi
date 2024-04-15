@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
@@ -10,7 +11,7 @@ const Navbar = () => {
   let navigate = useNavigate();
 
   // สร้าง event logout
-  const Logout = () => {
+  const logout = () => {
     localStorage.removeItem("fullname");
     // ส่งกลับไปหน้า login
     navigate("/login");
@@ -240,7 +241,7 @@ const Navbar = () => {
                 Help Center
               </a>
               <div className="dropdown-divider" />
-              <a className="dropdown-item" href="#" onClick={Logout}>
+              <a className="dropdown-item" href="#" onClick={logout}>
                 Log out
               </a>
             </div>

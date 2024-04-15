@@ -1,3 +1,4 @@
+import React from "react";
 import DocumentTitle from "react-document-title";
 import Sidebar from "../../shared/backend/Sidebar";
 import Navbar from "../../shared/backend/Navbar";
