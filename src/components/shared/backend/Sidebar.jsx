@@ -18,7 +18,7 @@ const Sidebar = () => {
               className="sidebar-link"
               style={({ isActive, isPending, isTransitioning }) => {
                 return {
-                  fontWeight: isActive ? "bold" : "",
+                  fontWeight: isPending ? "bold" : "",
                   color: isActive ? "red" : "white",
                   viewTransitionName: isTransitioning ? "slide" : "",
                 };
@@ -35,7 +35,7 @@ const Sidebar = () => {
               className="sidebar-link"
               style={({ isActive, isPending, isTransitioning }) => {
                 return {
-                  fontWeight: isActive ? "bold" : "",
+                  fontWeight: isPending ? "bold" : "",
                   color: isActive ? "red" : "white",
                   viewTransitionName: isTransitioning ? "slide" : "",
                 };
