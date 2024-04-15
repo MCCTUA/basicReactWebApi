@@ -48,7 +48,7 @@ const Product = () => {
                         <td>{product.product_name}</td>
                         <td>{product.product_barcode}</td>
                         <td>{product.product_price}</td>
-                        {/* <td>{product.product_date}</td> */}
+                        <td>{product.product_date}</td>
                         <td className="text-right">
                           <a href="#" className="btn btn-sm btn-warning">
                             Edit
