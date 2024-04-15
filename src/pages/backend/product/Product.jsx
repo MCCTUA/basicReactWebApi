@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BackendLayout from "../../../components/layouts/backend/BackendLayout";
+import api from "../../../services/productAPI";
 
 const Product = () => {
+  //==========================================================================
+  // ส่วนของการอ่านข้อมูลจาก API
+  //==========================================================================
+  // สร้างตัวแปรมารับข้อมูลที่อ่านจาก API
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    api.getAllProduct().then((res) => {
+      // console.log(res.data);
+      setProducts(res.data);
+    });
+  }, []);
+
+  document.title = "Product | Smart Stock";
   return (
     <BackendLayout title="Product">
       <div>
@@ -18,26 +34,32 @@ const Product = () => {
                       <th>Barcode</th>
                       <th>Price</th>
                       <th>Date</th>
-                      <th>Manage</th>
+                      <th style={{ width: "130px", textAlign: "right" }}>
+                        Manage
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>xxx</td>
-                      <td>Samsung</td>
-                      <td>2038485749</td>
-                      <td>29000</td>
-                      <td>20/10/2024 00:30</td>
-                      <td className="text-right" style={{ width: "200px" }}>
-                        <a href="#" className="btn btn-sm btn-warning">
-                          Edit
-                        </a>
-                        &nbsp;
-                        <a href="#" className="btn btn-sm btn-danger">
-                          Delete
-                        </a>
-                      </td>
-                    </tr>
+                    {products.map((product, index) => (
+                      <tr key={index}>
+                        <td>
+                          <img src={product.product_image} height="50" alt="" />
+                        </td>
+                        <td>{product.product_name}</td>
+                        <td>{product.product_barcode}</td>
+                        <td>{product.product_price}</td>
+                        {/* <td>{product.product_date}</td> */}
+                        <td className="text-right">
+                          <a href="#" className="btn btn-sm btn-warning">
+                            Edit
+                          </a>
+                          &nbsp;
+                          <a href="#" className="btn btn-sm btn-danger">
+                            Delete
+                          </a>
+                        </td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
