@@ -1,12 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AuthLayout from "../../components/layouts/auth/AuthLayout";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Login = () => {
   // สร้างตัวแปรแบบ State ไว้รับค่าจาก form
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  // สร้างตัวแปรสำหรับเปลี่ยนหน้า
+  const navigate = useNavigate();
+
+  // เช็คว่ามีการ login อยู่แล้วหรือไม่ หาก login แล้วให้ส่งไปที่หน้า dashboard อัตโนมัติ
+  useEffect(() => {
+    if (localStorage.getItem("fullname") !== null) {
+      navigate("/backend/dashboard");
+    }
+  });
 
   // function สำหรับ submit form
   const handleSubmit = (e) => {
@@ -35,11 +44,11 @@ const Login = () => {
         },
       }).then((result) => {
         if (result.dismiss === Swal.DismissReason.timer) {
-          // // เก็บชื่อผู้ใช้ลง LocalStorage
-          // localStorage.setItem("fullname", "สามิตร โกยม");
+          // เก็บชื่อผู้ใช้ลง LocalStorage
+          localStorage.setItem("fullname", "สามิตร โกยม");
 
-          // // ส่งไปหน้า Backend / Dashboard
-          // window.location = "/backend/dashboard";
+          // ส่งไปหน้า Backend / Dashboard
+          navigate("/backend/dashboard", { replace: true });
           console.log("I was closed by the timer");
         }
       });

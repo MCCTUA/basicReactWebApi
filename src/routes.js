@@ -10,7 +10,7 @@ const MyRoutes = () => {
         < Routes >
 
             {/* Frontend */}
-            <Route exact={true} path="/" element={<Login />} />
+            <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/forgotpassword" element={<Forgotpassword />} />
