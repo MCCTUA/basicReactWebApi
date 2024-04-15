@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AuthLayout from "../../components/layouts/auth/AuthLayout";
 // eslint-disable-next-line
 import { Link } from "react-router-dom";

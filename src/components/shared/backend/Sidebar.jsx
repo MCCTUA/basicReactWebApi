@@ -3,7 +3,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Sidebar = (activStyle) => {
+const Sidebar = () => {
   return (
     <nav id="sidebar" className="sidebar">
       <div className="sidebar-content js-simplebar">
@@ -16,14 +16,33 @@ const Sidebar = (activStyle) => {
             <NavLink
               to="/backend/dashboard"
               className="sidebar-link"
-              activeStyle={{
-                fontWeight: "bold",
-                color: "red",
+              style={({ isActive, isPending, isTransitioning }) => {
+                return {
+                  fontWeight: isActive ? "bold" : "",
+                  color: isActive ? "red" : "white",
+                  viewTransitionName: isTransitioning ? "slide" : "",
+                };
               }}
             >
               <i className="align-middle" data-feather="sliders" />
               &nbsp;
               <span className="align-middle">Dashboard</span>
+            </NavLink>
+          </li>
+          <li className="sidebar-item">
+            <NavLink
+              to="/backend/product"
+              className="sidebar-link"
+              style={({ isActive, isPending, isTransitioning }) => {
+                return {
+                  fontWeight: isActive ? "bold" : "",
+                  color: isActive ? "red" : "white",
+                  viewTransitionName: isTransitioning ? "slide" : "",
+                };
+              }}
+            >
+              <i className="align-middle" data-feather="sliders" />
+              <span className="align-middle">Product</span>
             </NavLink>
           </li>
           <li className="sidebar-item">
@@ -40,18 +59,6 @@ const Sidebar = (activStyle) => {
               className="sidebar-dropdown list-unstyled collapse "
               data-parent="#sidebar"
             >
-              <li className="sidebar-item">
-                <NavLink
-                  to="/backend/product"
-                  className="sidebar-link"
-                  activeStyle={{
-                    fontWeight: "bold",
-                    color: "red",
-                  }}
-                >
-                  Product
-                </NavLink>
-              </li>
               <li className="sidebar-item">
                 <a className="sidebar-link" href="#">
                   Report

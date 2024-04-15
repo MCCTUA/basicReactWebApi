@@ -4,7 +4,8 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Forgotpassword from "./pages/forgotpassword/Forgotpassword";
 import PageNotFound from "./pages/pagenotfound/PageNotFound";
-import Dashboard from "./pages/backend/Dashboard";
+import Dashboard from "./pages/backend/dashboard/Dashboard";
+import Product from './pages/backend/product/Product';
 
 const MyRoutes = () => {
     return (
@@ -18,6 +19,7 @@ const MyRoutes = () => {
 
             {/* Backend */}
             <Route path="/backend/dashboard" element={<Dashboard />} />
+            <Route path="/backend/product" element={<Product />} />
 
             <Route path='*' element={<PageNotFound />} />
         </ Routes >
