@@ -1,36 +1,65 @@
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="container-fluid">
         <div className="row text-muted">
-          <div className="col-6 text-left">
+          <div className="col-6 text-start">
             <p className="mb-0">
-              <a href="index.html" className="text-muted">
-                <strong>Smart Design Demo</strong>
+              <a
+                className="text-muted"
+                href="https://adminkit.io/"
+                target="_blank"
+              >
+                <strong>AdminKit</strong>
+              </a>
+              {"{"}" "{"}"}-{"{"}" "{"}"}
+              <a
+                className="text-muted"
+                href="https://adminkit.io/"
+                target="_blank"
+              >
+                <strong>Bootstrap Admin Template</strong>
               </a>
               {"{"}" "{"}"}©
             </p>
           </div>
-          <div className="col-6 text-right">
+          <div className="col-6 text-end">
             <ul className="list-inline">
               <li className="list-inline-item">
-                <a className="text-muted" href="#">
+                <a
+                  className="text-muted"
+                  href="https://adminkit.io/"
+                  target="_blank"
+                >
                   Support
                 </a>
               </li>
               <li className="list-inline-item">
-                <a className="text-muted" href="#">
+                <a
+                  className="text-muted"
+                  href="https://adminkit.io/"
+                  target="_blank"
+                >
                   Help Center
                 </a>
               </li>
               <li className="list-inline-item">
-                <a className="text-muted" href="#">
+                <a
+                  className="text-muted"
+                  href="https://adminkit.io/"
+                  target="_blank"
+                >
                   Privacy
                 </a>
               </li>
               <li className="list-inline-item">
-                <a className="text-muted" href="#">
+                <a
+                  className="text-muted"
+                  href="https://adminkit.io/"
+                  target="_blank"
+                >
                   Terms
                 </a>
               </li>

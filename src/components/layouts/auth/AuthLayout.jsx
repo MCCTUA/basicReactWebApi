@@ -1,6 +1,6 @@
 import DocumentTitle from "react-document-title";
 
-const AuthLayout = ({ children, title="Home" }) => {
+const AuthLayout = ({ children, title = "Home" }) => {
   return (
     <>
       <DocumentTitle title={title + " | Smart Stock"} />

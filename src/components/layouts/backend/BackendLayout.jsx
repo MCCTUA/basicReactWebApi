@@ -9,10 +9,8 @@ const BackendLayout = ({ children, title = "Dashboard" }) => {
       <DocumentTitle title={title + " | Smart Stock"} />
       <div className="wrapper">
         <Sidebar />
-
         <div className="main">
           <Navbar />
-
           <main className="content">
             <div className="container-fluid p-0">{children}</div>
           </main>
